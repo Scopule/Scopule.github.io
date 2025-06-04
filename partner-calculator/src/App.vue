@@ -1,47 +1,83 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+  import { ref } from 'vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import TheWelcome from './components/TheWelcome.vue'
+
+  const isCalculated = ref(false)
+
+  function calculate(){
+    isCalculated.value = true
+  }
+
+  function reset(){
+    isCalculated.value = false
+  }
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="page-wrapper dev-border"> 
+    <div class="content-wrapper dev-border">
+      <div class="info-area dev-border">      
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      </div>
+      <div class="main-area dev-border">
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+        X <br>
+        X <br>
+        X <br>
+        X <br>
+        X <br>
+        X <br>
+        X <br>
+
+        
+
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
+  .info-area {
+    border-color: green !important;  
+    width: 20rem;
+    height: 100%;
+  }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+  .main-area {
+    border-color: blue !important;
+    /* max-width: 50%;
+    min-width: 460px; */
+    /* width: fit-content; */
+    height: fit-content;    
+    /* flex-grow: 1; */
+  }
 
-@media (min-width: 1024px) {
-  header {
+  .content-wrapper {
+    border-color: purple !important;  
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* justify-content: center; */
+    /* transform: translateX(-20rem); */
+    max-width: calc(100%-2.5rem);
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
+  .page-wrapper {
     display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;    
+    gap: 1.25rem;    
+
+    width: 100vw;
+    height: 100vh;
+    padding: 1.25rem;
   }
-}
+
+  .dev-border {
+    border: 1px dashed red;
+  }
 </style>
